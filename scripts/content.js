@@ -1,4 +1,5 @@
 let url = "http://localhost:3001";
+let responseFromLogin;
 
 const onLogin = async () => {
   const loginData = {
@@ -17,5 +18,13 @@ const onLogin = async () => {
     }),
   })
     .then((response) => response.json())
-    .then((response) => JSON.stringify(console.log(response)));
+    .then((response) =>
+      chrome.storage.sync.set({ key: JSON.stringify(response.id) }).then(() => {
+        alert(`Your response is ${JSON.stringify(response.id)}`);
+      })
+    );
 };
+
+const loginBtn = document
+  .getElementById("login-btn")
+  .addEventListener("click", onLogin);
