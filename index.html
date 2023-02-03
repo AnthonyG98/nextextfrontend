@@ -4,26 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./scripts/style.css" />
     <title>index</title>
   </head>
   <body>
-    <div className="login-container">
-      <div className="login-entry-container">
-        <div className="login-entry">
-          <input
-            type="text"
-            className="login-input"
-            placeholder="username"
-            id="username"
-          />
-          <input
-            type="password"
-            className="login-input"
-            placeholder="password"
-            id="password"
-          />
-          <button id="login-btn">LOGIN</button>
-        </div>
+    <div class="extension-container">
+      <p class="input-head">SET REDIRECT URL:</p>
+      <input
+        id="url-input"
+        type="text"
+        placeholder="Set URL to be redirected once timer runs out"
+      />
+      <div class="number-container">
+        <p id="time">0</p>
+        <button id="subtract">-5 min</button>
+        <button id="add">+5 min</button>
+        <button id="set-btn">SET TIMER</button>
       </div>
     </div>
     <script src="./scripts/content.js"></script>
